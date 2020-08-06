@@ -5,7 +5,7 @@
 </head>
 <body>
 	<?php
-  $no = array(12,3,4,11,45);
+  $no = array(12,3,4,65,11,45);
  $maximum=maxval($no);
  echo "The maximum value is =".$maximum;
   ?>
@@ -20,17 +20,15 @@
 function maxval($num)
 	{	
 			$max = $num[0];
-			$i = 0;
-			while($i<=4)  
+			  foreach ($num as  $value) 
 				{ 
-					if($max < $num[$i])
+					if($max < $value)
 					{
 
-						$temp= $num[$i];
-						$num[$i] = $max;
+						$temp= $value;
+						$value= $max;
 						$max = $temp;	
 					}
-					$i++;
 				}
 				return $max;
 	}
